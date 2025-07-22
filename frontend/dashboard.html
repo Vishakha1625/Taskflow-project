@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <div class="app">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="images/logo.png" alt="" class="logo-img">
+                    <span>TaskFlow</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-page="projects">
+                    <i class="fas fa-folder"></i>
+                    <span>Projects</span>
+                </li>
+                <li class="nav-item" data-page="kanban">
+                    <i class="fas fa-columns"></i>
+                    <span>Kanban</span>
+                </li>
+                <li class="nav-item" data-page="teams">
+                    <i class="fas fa-users"></i>
+                    <span>Teams</span>
+                </li>
+                <li class="nav-item" data-page="profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </li>
+                <li class="nav-item" data-page="logout" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1 id="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                      <div class="notification-bell">
+                          <i class="fas fa-bell" id="notif-icon"></i>
+                          <span class="notif-dot" id="notif-dot" style="display: none;"></span>
+                          <div id="notif-dropdown" class="hidden">
+                             <h4>Notifications</h4>
+                          <div id="notif-items">Loading...</div>
+                          </div>
+                      </div>
+                    <button class="btn btn-primary" id="add-task-btn">
+                        <i class="fas fa-plus"></i>
+                        Add Task
+                    </button>
+                    <div class="user-profile">
+                        <img id="headerAvatar" src="images/avatar.png" alt="User" class="user-avatar">
+                        <span id="userNameDisplay">User</span>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Page -->
+            <div id="dashboard-page" class="page active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-projects"></h3>
+                            <p>Total Projects</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-tasks"></h3>
+                            <p>Total Tasks</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="total-users"></h3>
+                            <p>Team Members</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="completion-rate"></h3>
+                            <p>Completion Rate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Recent Tasks</h3>
+                        <div id="recent-tasks" class="task-list">
+                            <!-- Tasks will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3>Project Progress</h3>
+                        <div id="project-progress" class="progress-list">
+                            <!-- Progress will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>   
+            </div>
+
+            <!-- Projects Page -->
+            <div id="projects-page" class="page">
+                <div class="page-header">
+                    <h2>Projects</h2>
+                    <div id="admin-action">
+                    <button class="btn btn-primary hidden" id="add-project-btn">
+                        <i class="fas fa-plus"></i>
+                        Add Project
+                    </button>
+                    </div>
+                </div>
+                <div id="projects-grid" class="projects-grid">
+                    <!-- Projects will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Kanban Page -->
+            <div id="kanban-page" class="page">
+                <div class="page-header">
+                    <h2>Task Board</h2>
+                </div>
+                <div class="kanban-board">
+                    <div class="kanban-column" data-status="todo">
+                        <div class="column-header">
+                            <h3>To Do</h3>
+                            <span class="task-count" id="todo-count">0</span>
+                        </div>
+                        <div class="column-content" id="todo-tasks">
+                            <!-- Tasks will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column" data-status="in-progress">
+                        <div class="column-header">
+                            <h3>In Progress</h3>
+                            <span class="task-count" id="in-progress-count">0</span>
+                        </div>
+                        <div class="column-content" id="in-progress-tasks">
+                            <!-- Tasks will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column" data-status="review">
+                        <div class="column-header">
+                            <h3>Review</h3>
+                            <span class="task-count" id="review-count">0</span>
+                        </div>
+                        <div class="column-content" id="review-tasks">
+                            <!-- Tasks will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column" data-status="done">
+                        <div class="column-header">
+                            <h3>Done</h3>
+                            <span class="task-count" id="done-count">0</span>
+                        </div>
+                        <div class="column-content" id="done-tasks">
+                            <!-- Tasks will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams Page -->
+            
+            <!-- Teams Page (Admin Only) -->
+            <div id="teams-page" class="page">
+                <div class="page-header">
+                    <h2>Team Management</h2>
+                    <button class="btn btn-primary hidden" id="add-member-btn">
+                        <i class="fas fa-user-plus"></i>
+                        Add Member to Project
+                    </button>
+                </div>
+                <div id="teams-grid" class="teams-grid">
+                    <!-- Team members will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Profile Page -->
+            <div id="profile-page" class="page">
+                <div class="profile-container">
+                    <form id="profileForm" class="profile-form">
+                        <h2>Account Settings</h2>
+                  
+                <div class="profile-header">
+                        <div class="profile-header">
+                          <img id="profileAvatar" src="images/avatar.png" alt="Profile" class="profile-avatar">
+                          <label for="avatarUpload" class="upload-btn">Change Photo</label>
+                         <input type="file" id="avatarUpload" accept="image/*" hidden>
+                        </div>
+
+                    </div>
+                        <div class="profile-info">
+                            <label>Name:</label>
+                            <input type="text" id="profileName" />
+                            <label>Email:</label>
+                            <input type="email" id="profileEmail" />
+                            <label>Role:</label>
+                            <input type="text" id="profileRole" disabled />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <h3 id="profile-completed-projects">0</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="profile-stat">
+                             <h3 id="profile-completed-tasks">0</h3>
+                            <p>Tasks Completed</p>
+                        </div>
+                        <div class="profile-stat">
+                             <h3 id="profile-rating">0.0</h3>
+                             <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>    
+    </div>
+
+    <!-- Add Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Task</h3>
+                <span class="close" id="close-task-modal">&times;</span>
+            </div>
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">Task Title</label>
+                    <input type="text" id="task-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task-priority">Priority</label>
+                    <select id="task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="task-assignee">Assignee</label>
+                    <select id="task-assignee">
+                       <option value="">Select Assignee</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="task-project">Project (optional)</label>
+                    <select id="task-project">
+                       <option value="">-- No Project --</option>
+                       <!-- Populated by JS -->
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-task">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Project</h3>
+                <span class="close" id="close-project-modal">&times;</span>
+            </div>
+            <form id="project-form">
+                <div class="form-group">
+                    <label for="project-name">Project Name</label>
+                    <input type="text" id="project-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="project-budget">Budget</label>
+                    <input type="number" id="project-budget" placeholder="10000">
+                </div>
+                <div class="form-group">
+                    <label for="project-deadline">Deadline</label>
+                    <input type="date" id="project-deadline">
+                </div>
+                <div class="form-group">
+                   <label for="project-team">Assign Team Members</label>
+                   <select id="project-team" multiple required>
+                    <!-- Populated by JS -->
+                   </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-project">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Add Member Modal (Admin Only) -->
+    <!-- Assign Team Members Modal -->
+<div id="member-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Assign Team Members to Project</h3>
+      <span class="close" id="close-member-modal">&times;</span>
+    </div>
+    <form id="assign-member-form">
+      <div class="form-group">
+        <label for="assign-project">Select Project</label>
+        <select id="assign-project" required></select>
+      </div>
+      <div class="form-group">
+        <label for="assign-users">Select Members</label>
+        <select id="assign-users" multiple required></select>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-secondary" id="cancel-member">Cancel</button>
+        <button type="submit" class="btn btn-primary">Assign</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    
+   
+    <script src="app.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | TaskFlow</title>
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body class="auth-page">
+  <div class="container">
+  <div class="form-box login">
+    <form id="loginForm">
+      <h3>Login</h3>
+      <div class="input-box">
+        <input type="email" placeholder="Email" id="loginEmail" required />
+         <i class='bx  bxs-envelope'  ></i>  
+      </div>
+      <div class="input-box">
+  <input type="password" placeholder="Password" id="loginPassword" required />
+  <i class='bx bxs-lock'></i>
+  <span class="toggle-eye" onclick="togglePassword('loginPassword', this)">
+    <i class="bx bx-show"></i>
+  </span>
+</div>
+      <button type="submit" class="btn">Login</button>
+      
+    </form>
+  </div>
+
+  <!-- Uncomment the following lines if you want to add a registration form -->
+   <div class="form-box register">
+    <form id="registerForm">
+      <h4>Create Account</h4>
+      <div class="input-box">
+        <input type="text" placeholder="Username" id="registerUsername" required />
+        <i class='bx  bxs-user'  ></i> 
+      </div>
+       <div class="input-box">
+        <input type="email" placeholder="Email" id="registerEmail" required />
+        <i class='bx  bxs-envelope'  ></i> 
+      </div>
+      <div class="input-box">
+  <input type="password" placeholder="Password" id="registerPassword" required />
+  <i class='bx bxs-lock'></i>
+  <span class="toggle-eye" onclick="togglePassword('registerPassword', this)">
+    <i class="bx bx-show"></i>
+  </span>
+</div>
+<div class="input-box">
+  <select id="registerRole" required>
+    <option value="" disabled selected>Select Role</option>
+    <option value="admin">Admin</option>
+    <option value="manager">Manager</option>
+    <option value="member">Member</option>
+  </select>
+  <i class='bx bxs-user-detail'></i>
+</div>
+    
+      <button type="submit" class="btn">Register</button>
+      
+      </form>
+    </div>
+    <div class="toggle-box">
+      <div class="toggle-pannel toggle-left">
+         <h3>Hello, Welcome!</h3>
+         <p>Don't have an account?</p>
+         <button class="btn register-btn">Register</button>
+      </div>
+      <div class="toggle-pannel toggle-right">
+         <h3>Welcome Back!</h3>
+         <p>Already have an account?</p>
+         <button class="btn login-btn">Login</button>
+      </div>
+    </div>
+    <script>
+      const container = document.querySelector(".container");
+const registerBtn = document.querySelector(".register-btn");
+const loginBtn = document.querySelectorAll(".login-btn");
+
+// UI toggles
+registerBtn.addEventListener("click", () => {
+  container.classList.add("active");
+});
+
+loginBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+    container.classList.remove("active");
+  });
+});
+
+// Show/hide password
+function togglePassword(fieldId, toggleElement) {
+  const input = document.getElementById(fieldId);
+  const icon = toggleElement.querySelector("i");
+
+  if (input.type === "password") {
+    input.type = "text";
+    icon.classList.remove("bx-show");
+    icon.classList.add("bx-hide");
+  } else {
+    input.type = "password";
+    icon.classList.remove("bx-hide");
+    icon.classList.add("bx-show");
+  }
+}
+
+// Helper to call backend
+async function api(path, method = 'GET', payload = null) {
+  const opts = {
+    method,
+    headers: { 'Content-Type': 'application/json' },
+  };
+  if (payload) opts.body = JSON.stringify(payload);
+  const res = await fetch(`/api${path}`, opts);
+  const data = await res.json();
+  if (!res.ok) throw data;
+  return data;
+}
+
+// Real Login logic
+document.getElementById("loginForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  if (!email || !password) return alert("Please enter both fields.");
+
+  try {
+    const data = await api('/auth/login', 'POST', { email, password });
+
+    sessionStorage.setItem('token', data.token);
+    sessionStorage.setItem('user', JSON.stringify(data));
+
+    alert("Login successful!");
+    window.location.href = "dashboard.html";
+  } catch (err) {
+    alert(err.error || "Login failed.");
+  }
+});
+
+// Real Register logic
+document.getElementById("registerForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("registerUsername").value.trim();
+  const email = document.getElementById("registerEmail").value.trim();
+  const password = document.getElementById("registerPassword").value.trim();
+  const role = document.getElementById("registerRole").value;
+
+  if (!name || !email || !password || !role) {
+    return alert("Please fill all fields and select a role.");
+  }
+
+  try {
+    await api('/auth/register', 'POST', { name, email, password, role });
+
+    alert("Registration successful! Please login.");
+    container.classList.remove("active"); // show login form
+  } catch (err) {
+    alert(err.error || "Registration failed.");
+  }
+});
+
+
+    </script>
+</body>
+</html>
