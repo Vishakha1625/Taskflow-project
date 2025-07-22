@@ -1,0 +1,177 @@
+[{
+  "_id": {
+    "$oid": "687e60555990bf8cc701e8e5"
+  },
+  "name": "API Integration",
+  "description": "Integrate third-party APIs for enhanced functionality",
+  "deadline": {
+    "$date": "2025-07-24T00:00:00.000Z"
+  },
+  "budget": 15000,
+  "assignedTo": [
+    {
+      "$oid": "687bedb96eba0e18e38b0a42"
+    },
+    {
+      "$oid": "687ea086d8d6b77e2d214d53"
+    }
+  ],
+  "progress": 0,
+  "createdAt": {
+    "$date": "2025-07-21T15:44:21.274Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:02:48.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea2df66a7c09e403c41fc"
+  },
+  "name": "E-commerce Platform",
+  "description": "Building a modern e-commerce platform with React and Node.js",
+  "deadline": {
+    "$date": "2025-07-28T00:00:00.000Z"
+  },
+  "budget": 50000,
+  "assignedTo": [
+    {
+      "$oid": "6877ea3d2310cf0cc26eac3a"
+    },
+    {
+      "$oid": "687ea013d8d6b77e2d214d3f"
+    },
+    {
+      "$oid": "687ea086d8d6b77e2d214d53"
+    },
+    {
+      "$oid": "687ea0d1d8d6b77e2d214d67"
+    }
+  ],
+  "progress": 0,
+  "createdAt": {
+    "$date": "2025-07-21T20:28:15.415Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T09:17:05.202Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea3d166a7c09e403c4267"
+  },
+  "name": "Mobile App Development",
+  "description": "Cross-platform mobile app using React Native",
+  "deadline": {
+    "$date": "2025-07-31T00:00:00.000Z"
+  },
+  "budget": 35000,
+  "assignedTo": [
+    {
+      "$oid": "687ea086d8d6b77e2d214d53"
+    },
+    {
+      "$oid": "687ea013d8d6b77e2d214d3f"
+    }
+  ],
+  "progress": 0,
+  "createdAt": {
+    "$date": "2025-07-21T20:32:17.824Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:03:30.330Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea43866a7c09e403c4276"
+  },
+  "name": "Website Redesign",
+  "description": "Complete redesign of company website with modern UI/UX",
+  "deadline": {
+    "$date": "2025-07-28T00:00:00.000Z"
+  },
+  "budget": 25000,
+  "assignedTo": [
+    {
+      "$oid": "6877ea3d2310cf0cc26eac3a"
+    },
+    {
+      "$oid": "687ea0d1d8d6b77e2d214d67"
+    },
+    {
+      "$oid": "687ea17cd8d6b77e2d214d7b"
+    }
+  ],
+  "progress": 0,
+  "createdAt": {
+    "$date": "2025-07-21T20:34:00.633Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:01:03.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea47c66a7c09e403c4285"
+  },
+  "name": "Data Analytics Dashboard",
+  "description": "Real-time analytics dashboard for business insights",
+  "deadline": {
+    "$date": "2025-07-30T00:00:00.000Z"
+  },
+  "budget": 40000,
+  "assignedTo": [
+    {
+      "$oid": "687ea0d1d8d6b77e2d214d67"
+    },
+    {
+      "$oid": "6877ea3d2310cf0cc26eac3a"
+    }
+  ],
+  "progress": 0,
+  "createdAt": {
+    "$date": "2025-07-21T20:35:08.750Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:06:18.832Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687f70c6bf86b61b3aa1478a"
+  },
+  "name": "College website",
+  "description": "build website foe college",
+  "deadline": {
+    "$date": "2025-07-30T00:00:00.000Z"
+  },
+  "budget": 20000,
+  "assignedTo": [
+    {
+      "$oid": "687e8e38d8d6b77e2d214bc6"
+    },
+    {
+      "$oid": "687bedb96eba0e18e38b0a42"
+    },
+    {
+      "$oid": "687ea013d8d6b77e2d214d3f"
+    },
+    {
+      "$oid": "687ea086d8d6b77e2d214d53"
+    }
+  ],
+  "progress": 0,
+  "createdAt": {
+    "$date": "2025-07-22T11:06:46.194Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T11:08:49.234Z"
+  },
+  "__v": 0
+}]

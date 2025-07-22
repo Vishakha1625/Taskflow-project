@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "687ea5b466a7c09e403c42c6"
+  },
+  "title": "Design user authentication flow",
+  "description": "Create wireframes and mockups for login/signup process",
+  "priority": "high",
+  "status": "done",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea43866a7c09e403c4276"
+  },
+  "assignedTo": {
+    "$oid": "6877ea3d2310cf0cc26eac3a"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:40:20.779Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:13:38.553Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea62966a7c09e403c42d5"
+  },
+  "title": "Implement payment gateway",
+  "description": "Integrate Stripe payment system",
+  "priority": "high",
+  "status": "done",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea2df66a7c09e403c41fc"
+  },
+  "assignedTo": {
+    "$oid": "687ea17cd8d6b77e2d214d7b"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:42:17.340Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:12:44.415Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea66166a7c09e403c42e4"
+  },
+  "title": "Setup database schema",
+  "description": "Design and implement database structure",
+  "priority": "medium",
+  "status": "todo",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea47c66a7c09e403c4285"
+  },
+  "assignedTo": {
+    "$oid": "687ea0d1d8d6b77e2d214d67"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:43:13.611Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T20:43:13.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea6ef66a7c09e403c42f3"
+  },
+  "title": "Create product catalog",
+  "description": "Build product listing and detail pages",
+  "priority": "medium",
+  "status": "in-progress",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea2df66a7c09e403c41fc"
+  },
+  "assignedTo": {
+    "$oid": "687ea013d8d6b77e2d214d3f"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:45:35.137Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T20:57:09.554Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea72766a7c09e403c4302"
+  },
+  "title": "Mobile app wireframes",
+  "description": "Design wireframes for mobile application",
+  "priority": "high",
+  "status": "done",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea3d166a7c09e403c4267"
+  },
+  "assignedTo": {
+    "$oid": "687ea086d8d6b77e2d214d53"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:46:31.170Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T09:15:28.485Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea76366a7c09e403c4311"
+  },
+  "title": "API endpoint development",
+  "description": "Develop REST API endpoints",
+  "priority": "medium",
+  "status": "review",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687e60555990bf8cc701e8e5"
+  },
+  "assignedTo": {
+    "$oid": "687bedb96eba0e18e38b0a42"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:47:31.146Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:09:33.232Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea7a266a7c09e403c4320"
+  },
+  "title": "User testing sessions",
+  "description": "Conduct user testing for new design",
+  "priority": "low",
+  "status": "review",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea43866a7c09e403c4276"
+  },
+  "assignedTo": {
+    "$oid": "687ea0d1d8d6b77e2d214d67"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:48:34.420Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:12:55.280Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea87866a7c09e403c4342"
+  },
+  "title": "Performance optimization",
+  "description": "Optimize website loading speed",
+  "priority": "medium",
+  "status": "done",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea43866a7c09e403c4276"
+  },
+  "assignedTo": {
+    "$oid": "687ea17cd8d6b77e2d214d7b"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:52:08.406Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:15:41.123Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea8c166a7c09e403c4351"
+  },
+  "title": "Third-party API research",
+  "description": "Research and evaluate API options",
+  "priority": "low",
+  "status": "in-progress",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687e60555990bf8cc701e8e5"
+  },
+  "assignedTo": {
+    "$oid": "687ea086d8d6b77e2d214d53"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:53:21.340Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T11:07:24.318Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687ea90a66a7c09e403c4360"
+  },
+  "title": "Dashboard mockups",
+  "description": "Create visual mockups for analytics dashboard",
+  "priority": "high",
+  "status": "in-progress",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea47c66a7c09e403c4285"
+  },
+  "assignedTo": {
+    "$oid": "6877ea3d2310cf0cc26eac3a"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T20:54:34.864Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:09:22.405Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687eab4d66a7c09e403c45af"
+  },
+  "title": "Create mobile app design",
+  "description": "",
+  "priority": "medium",
+  "status": "done",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea3d166a7c09e403c4267"
+  },
+  "assignedTo": {
+    "$oid": "687ea013d8d6b77e2d214d3f"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T21:04:13.374Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T11:10:52.860Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "687eac4e66a7c09e403c45dc"
+  },
+  "title": "Analysis of data ",
+  "description": "",
+  "priority": "low",
+  "status": "review",
+  "createdBy": {
+    "$oid": "6876624ed4167b7a22fa23a3"
+  },
+  "project": {
+    "$oid": "687ea47c66a7c09e403c4285"
+  },
+  "assignedTo": {
+    "$oid": "687bedb96eba0e18e38b0a42"
+  },
+  "createdAt": {
+    "$date": "2025-07-21T21:08:30.052Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:15:18.334Z"
+  },
+  "__v": 0
+}]
